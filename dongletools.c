@@ -117,9 +117,8 @@ static int DogGetFileSize(int dir, int file, int size)
 		size++;
 		readoffset++;
 	}
-	if (size > DOG_MAX_FILE_SIZE) {
-		printf("\tFile much larger than expected, INCORRECT SIZE REPORTING\n");
-	}
+	if (size > DOG_MAX_FILE_SIZE)
+		printf("\tFile %04x/%d much larger than expected, INCORRECT SIZE REPORTING\n", dir, file);
 	return size;
 }
 
@@ -151,9 +150,8 @@ static void DogLoadFile(int dir, int file, int size)
 		free(buffer);
 		return;
 	}
-	if (write(fd, buffer, size) != size) {
+	if (write(fd, buffer, size) != size)
 		printf("\tError writing file \"%s\" on disk to backup! INCOMPLETE FILE\n", outname);
-	}
 	close(fd);
 	free(buffer);
 }
@@ -194,19 +192,17 @@ static bool DogSaveFile(int dir, int file)
 		printf("\tFile not on dongle or incorrect size, recreating...\n");
 		rc_DeleteFile(dogHandle, dir, file);
 		HRESULT code = rc_CreateFile(dogHandle, dir, file, RC_TYPEFILE_DATA, size);
-		if (code) {
+		if (code)
 			printf("\tUnable to create file on dongle with error %08x\n", code);
-		}
 	}
 
 	HRESULT code = rc_WriteFile(dogHandle, dir, file, 0, size, buffer);
+	free(buffer);
 	if (code) {
 		printf("\tFailed to write file to dongle with error %08x\n", code);
-	} else {
-		if (suggestion)
-			suggestion->size = size;
-	}
-	free(buffer);
+		return false;
+	} else if (suggestion)
+		suggestion->size = size;
 
 	return true;
 }
@@ -228,9 +224,8 @@ static void DogDeleteFile(int dir, int file)
 			return;
 		}
 		printf("\tDeleted file\n");
-	} else {
+	} else
 		printf("\tFile does not exist\n");
-	}
 }
 
 static void DogInfo()
@@ -310,9 +305,8 @@ static void DogSaveSizes(int dir, int file)
 	}
 
 	HRESULT code = rc_WriteFile(dogHandle, dir, file, 0, sizeof(buffer), (UCHAR*)buffer);
-	if (code) {
+	if (code)
 		printf("\tUnable to write sizes file with error %08x\n", code);
-	}
 }
 
 static void DogBackup()
@@ -358,9 +352,8 @@ static void DogFormat()
 		return;
 	}
 	code = rc_WriteFile(dogHandle, dir, DOG_FORMAT_FILE, 0, sizeof(DOG_FORMAT_DATA), DOG_FORMAT_DATA);
-	if (code) {
+	if (code)
 		printf("Unable to write template data due to error %08x\nYOUR DONGLE IS NOW PROBABLY EMPTY, GOOD LUCK\n", code);
-	}
 }
 
 static void DogUsage(const char* arg)
