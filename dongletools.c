@@ -38,7 +38,7 @@ static ReadSuggestion readSuggestions[] = {
 	{ 0x3F00, 5, 0x40 },
 	{ 0x3F00, 6, 0x70 },
 	{ 0x3F00, 10, 0x80 },
-	{ 0, 0, 0}
+	{ 0, 0, 0 }
 };
 static ReadSuggestion* SuggestionAt(int dir, int file)
 {
@@ -254,7 +254,7 @@ static void DogInfo()
 		printf("Failed to get dongle product number\n");
 		return;
 	}
-	printf("\tProduct number: %08x\n");
+	printf("\tProduct number: %08x\n", productNumber);
 }
 
 static int sizeFiles[] = { 1, 6, 3 };
@@ -359,7 +359,7 @@ static void DogFormat()
 	}
 	code = rc_WriteFile(dogHandle, dir, DOG_FORMAT_FILE, 0, sizeof(DOG_FORMAT_DATA), DOG_FORMAT_DATA);
 	if (code) {
-		printf("Unable to write template data due to error %08x\nYOUR DONGLE IS NOW PROBABLY BROKEN, GOOD LUCK\n", code);
+		printf("Unable to write template data due to error %08x\nYOUR DONGLE IS NOW PROBABLY EMPTY, GOOD LUCK\n", code);
 	}
 }
 
@@ -372,7 +372,6 @@ static void DogUsage(const char* arg)
 		"`%s f` to format the dongle / delete all data.\n",
 		arg, arg, arg, arg
 	);
-	exit(1);
 }
 
 int main(int argc, const char* argv[])
