@@ -241,7 +241,7 @@ static void DogInfo()
 	printf("\tSerial Number: %08x\n", info.ulSerialNumber);
 	printf("\tCurrent Number: %08x\n", info.ulCurrentNumber);
 	printf("\tDongle Type: %08x\n", (int)info.ucDogType);
-	printf("\tDongle Model: %.4s\n", (int)info.ucDogModel);
+	printf("\tDongle Model: %.4s\n", info.ucDogModel);
 
 	ULONG productNumber = 0;
 	code = rc_GetProductCurrentNo(dogHandle, &productNumber);
