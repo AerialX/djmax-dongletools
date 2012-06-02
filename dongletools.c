@@ -263,7 +263,7 @@ static void DogReadSizes(int dir, int file)
 	}
 	HRESULT code = rc_ReadFile(dogHandle, dir, file, 0, sizeof(buffer), (UCHAR*)buffer);
 	if (code) {
-		printf("\tFailed to read sizes file\n");
+		printf("\tFailed to read sizes file with error %08x\n", code);
 		return;
 	}
 
