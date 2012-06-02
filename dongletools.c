@@ -246,7 +246,7 @@ static void DogInfo()
 	ULONG productNumber = 0;
 	code = rc_GetProductCurrentNo(dogHandle, &productNumber);
 	if (code) {
-		printf("Failed to get dongle product number\n");
+		printf("Failed to get dongle product number with error %08x\n", code);
 		return;
 	}
 	printf("\tProduct number: %08x\n", productNumber);
