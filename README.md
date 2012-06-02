@@ -28,7 +28,7 @@ Run `dongletools.exe d` to dump the contents of your Profile Key Dongle to the c
 Run `dongletools.exe u` to write the dumped files from the current directory to your dongle. That's about it - it will also upload partial dumps in case you only wanted to change one or two files for some reason rather than do a full restore.
 
 ### Format Save
-Run `dongletools.exe f` to delete all files on your dongle and create an empty save on it. This is about the same as the Reset option in the Trilogy launcher, except it will work even when Trilogy starts rejecting the dongle outright if you're really messed it up. Also this way your MyDocuments/DJMaxTrilogy folder containing all of your highscores isn't deleted. But just in case, don't try this unless you have a backup.
+Run `dongletools.exe f` to delete all files on your dongle and create an empty save on it. This is about the same as the Reset option in the Trilogy launcher, except it will work even when Trilogy starts rejecting the dongle outright if you've really messed it up. Also this way your MyDocuments/DJMaxTrilogy folder containing all of your highscores isn't deleted. But just in case, don't try this unless you have a backup.
 
 
 PROFILE JUGGLING

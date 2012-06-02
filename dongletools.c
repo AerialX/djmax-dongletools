@@ -368,7 +368,7 @@ static void DogUsage(const char* arg)
 	printf("Usage:\n"
 		"`%s p` to print out dongle information.\n"
 		"`%s d` to dump files from dongle.\n"
-		"`%s u` to upload files to dongle.\n",
+		"`%s u` to upload files to dongle.\n"
 		"`%s f` to format the dongle / delete all data.\n",
 		arg, arg, arg, arg
 	);
