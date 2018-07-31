@@ -1,7 +1,7 @@
 dongletools
 ===========
 
-dongletools is a simple collection of tools that allows you to back up and restore save data from a DJMax Trilogy Profile Key dongle.
+[dongletools.exe](https://github.com/AerialX/djmax-dongletools/releases) is a simple collection of tools that allows you to back up and restore save data from a DJMax Trilogy Profile Key dongle.
 
 
 OBLIGATORY DISCLAIMER
@@ -14,7 +14,7 @@ That aside, as long as you make an initial backup with it and keep it in a safe 
 USAGE
 =====
 
-It's a commandline tool. Someone else can make a GUI for it if it matters. It works in the current directory, and doesn't do any sort of file management. So if you use it to dump a save it's your responsibility to move the files it generates to a more permanent backup folder - otherwise subsequent dumps will overwrite the old files.
+It's a commandline tool, works in the current directory, and doesn't do any sort of file management. So if you use it to dump a save it's your responsibility to move the files it generates to a more permanent backup folder - otherwise subsequent dumps will overwrite the old files.
 
 Run it without arguments for a simple usage printout.
 
@@ -40,5 +40,4 @@ I wrote this because I wanted to start a new game without losing my old data. Th
 CHEATING
 ========
 
-While this isn't a save trainer tool, it does indeed enable savegame editing... C'est la vie. 3f00-6.bin can be edited to give yourself gold/experience/etc., and 3f00-3.bin seems to hold the majority of the game's data including unlockables, discs, emblems, etc. Just don't ask me about it.
-
+While this isn't a save trainer tool, it does indeed enable savegame editing... `3f00-6.bin` can be edited to give yourself gold/experience/etc. and `3f00-3.bin` seems to hold the majority of the game's data including unlockables, discs, emblems, etc.
